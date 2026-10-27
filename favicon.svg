@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="knightGrad" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="16" y1="12" x2="48" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="#0f172a"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="url(#knightGrad)" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- Crown / King Cross -->
+  <path d="M32 10V18M28 14H36" stroke="url(#goldGlow)" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Chess Knight / King Hybrid Silhouette -->
+  <path d="M22 52H42C42 52 41 46 38 44C36 42.5 35 39 37 36C39.5 32 43 28 41 24C39 20 33 20 31 23C29 19 23 21 23 26C23 29 25 31 24 35C23 39 21 42 20 44C18 47 22 52 22 52Z" fill="url(#knightGrad)" stroke="#c084fc" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Eye -->
+  <circle cx="28" cy="27" r="2" fill="#ffffff"/>
+  <!-- Mane detailing -->
+  <path d="M34 26C35 29 37 32 35 35" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.6"/>
+  <!-- Pedestal -->
+  <rect x="18" y="50" width="28" height="4" rx="2" fill="url(#goldGlow)"/>
+</svg>

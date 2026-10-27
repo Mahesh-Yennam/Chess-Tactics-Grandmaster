@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFQ8M0VSFN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-RFQ8M0VSFN');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Tactics Grandmaster - Free Online Chess & Tactics Puzzles | Gamility</title>
+  <meta name="description" content="Play free chess online with tactical puzzles, AI bot opponent, and analysis. Test your tactical intuition with checkmate puzzles, fork drills, and grandmaster practice.">
+  <meta name="keywords" content="chess, chess tactics, chess puzzles, play chess online, chess grandmaster, free chess games, board game, gamility">
+  <meta name="theme-color" content="#8b5cf6">
+
+    <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chess Tactics Grandmaster - Free Online Chess & Tactics Puzzles | Gamility">
+  <meta property="og:description" content="Play free chess online with tactical puzzles, AI bot opponent, and analysis. Test your tactical intuition with checkmate puzzles, fork drills, and grandmaster practice.">
+  <meta property="og:image" content="preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Chess Tactics Grandmaster - Free Online Chess & Tactics Puzzles | Gamility">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chess Tactics Grandmaster - Free Online Chess & Tactics Puzzles | Gamility">
+  <meta name="twitter:description" content="Play free chess online with tactical puzzles, AI bot opponent, and analysis. Test your tactical intuition with checkmate puzzles, fork drills, and grandmaster practice.">
+  <meta name="twitter:image" content="preview.png">
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Chess Tactics Grandmaster",
+    "url": "https://mahesh-yennam.github.io/Gamility/games/chess-tactics-grandmaster/",
+    "applicationCategory": "GameApplication",
+    "operatingSystem": "All",
+    "genre": ["Strategy", "Board Game", "Chess", "Puzzle"],
+    "description": "Tactical chess puzzle trainer and AI match platform featuring full rule validation, move history, drag-and-drop, and sound effects."
+  }
+  </script>
+</head>
+<body>
+  <!-- Top Gamility Ribbon for Standalone & Repos Navigation -->
+  <header class="top-nav-ribbon" role="banner">
+    <a href="https://mahesh-yennam.github.io/Gamility/" class="ribbon-brand" title="Gamility Home">
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 4L4 12V28L20 36L36 28V12L20 4Z" stroke="#8b5cf6" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M20 12L12 16V24L20 28L28 24V16L20 12Z" fill="#7c3aed" fill-opacity="0.85"/>
+        <circle cx="20" cy="20" r="3" fill="#ffffff"/>
+      </svg>
+      <span>Gamility Arcade</span>
+    </a>
+    <a href="https://mahesh-yennam.github.io/Gamility/games.html" class="ribbon-back-btn" title="Back to All Games">
+      <span>←</span> Back to Games
+    </a>
+  </header>
+
+  <!-- Main Game Stage -->
+  <main class="game-wrapper" id="gameWrapper">
+    <!-- Header with Live HUD -->
+    <header class="arcade-header">
+      <div class="game-title-badge">
+        <h1>Chess Tactics Grandmaster</h1>
+        <span class="game-mode-subtitle" id="modeSubtitle">Tactics Puzzles • Tactical Trainer</span>
+      </div>
+      <div class="hud-panel" aria-label="Game HUD">
+        <div class="hud-stat">
+          <span class="hud-label">Rating</span>
+          <span id="ratingVal" class="hud-val stat-purple">1200</span>
+        </div>
+        <div class="hud-stat">
+          <span class="hud-label">Streak</span>
+          <span id="streakVal" class="hud-val stat-gold">0 🔥</span>
+        </div>
+        <div class="hud-stat">
+          <span class="hud-label">Solved</span>
+          <span id="solvedVal" class="hud-val stat-cyan">0 / 0</span>
+        </div>
+        <div class="hud-stat">
+          <span class="hud-label">Turn</span>
+          <span id="turnVal" class="hud-val stat-turn">White</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Controls & Mode Selector Toolbar -->
+    <div class="controls-toolbar">
+      <div class="mode-pills-group" role="tablist" aria-label="Game Modes">
+        <button id="modeTacticsBtn" class="mode-tab-btn active" type="button" role="tab" aria-selected="true">
+          <span>🧩</span> Tactics Puzzles
+        </button>
+        <button id="modeAiBtn" class="mode-tab-btn" type="button" role="tab" aria-selected="false">
+          <span>🤖</span> Play vs AI Bot
+        </button>
+        <button id="modePassBtn" class="mode-tab-btn" type="button" role="tab" aria-selected="false">
+          <span>👥</span> 2-Player Pass
+        </button>
+      </div>
+
+      <div class="toolbar-btn-group">
+        <button id="newGameBtn" class="tool-icon-btn" type="button" title="New game / Next puzzle">
+          <span>🔄</span> <span id="newGameBtnText">Next Puzzle</span>
+        </button>
+        <button id="hintBtn" class="tool-icon-btn" type="button" title="Get tactical move hint (H)">
+          <span>💡</span> Hint
+        </button>
+        <button id="undoBtn" class="tool-icon-btn" type="button" title="Take back move (Ctrl+Z)">
+          <span>↩️</span> Undo
+        </button>
+        <button id="flipBoardBtn" class="tool-icon-btn" type="button" title="Flip board perspective (F)">
+          <span>🔃</span> Flip
+        </button>
+        <button id="difficultyBtn" class="tool-icon-btn" type="button" title="Toggle AI Difficulty">
+          <span id="diffIcon">⚡</span> <span id="diffLabel">AI: Club</span>
+        </button>
+        <button id="muteBtn" class="tool-icon-btn" type="button" title="Toggle Sound FX">
+          <span id="soundIcon">🔊</span> Sound
+        </button>
+        <button id="rulesBtn" class="tool-icon-btn" type="button" title="View Chess Rules & Puzzles Guide">
+          <span>📖</span> Guide
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Arena Layout: Board + Live Analysis Sidebar -->
+    <div class="chess-arena" id="chessArena">
+      <!-- Left: Chessboard Column -->
+      <section class="board-column">
+        <!-- Top Player Card (Opponent / Black) -->
+        <div class="player-bar top-player" id="topPlayerBar">
+          <div class="player-info">
+            <div class="player-avatar" id="topAvatar">♟️</div>
+            <div class="player-meta">
+              <span class="player-name" id="topPlayerName">Tactics Trainer</span>
+              <span class="player-tag" id="topPlayerTag">Puzzle Engine</span>
+            </div>
+          </div>
+          <div class="player-extras">
+            <div class="captured-box" id="topCapturedBox" title="Pieces captured by this side"></div>
+            <span class="material-lead" id="topMaterialLead"></span>
+          </div>
+        </div>
+
+        <!-- The Chessboard Stage with Rank & File Coordinates -->
+        <div class="board-container" id="boardContainer">
+          <div class="board-frame">
+            <!-- Dynamic Chess Grid (Generated via JS) -->
+            <div class="chessboard" id="chessboard" role="grid" aria-label="Interactive 8x8 Chessboard"></div>
+          </div>
+        </div>
+
+        <!-- Bottom Player Card (You / White) -->
+        <div class="player-bar bottom-player" id="bottomPlayerBar">
+          <div class="player-info">
+            <div class="player-avatar" id="bottomAvatar">👑</div>
+            <div class="player-meta">
+              <span class="player-name" id="bottomPlayerName">You (Grandmaster)</span>
+              <span class="player-tag" id="bottomPlayerTag">Rating: 1200</span>
+            </div>
+          </div>
+          <div class="player-extras">
+            <div class="captured-box" id="bottomCapturedBox" title="Pieces captured by this side"></div>
+            <span class="material-lead" id="bottomMaterialLead"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Analysis & Move Log Sidebar -->
+      <aside class="sidebar-column">
+        <!-- Status / Objective Card -->
+        <div class="tactics-card">
+          <div class="tactics-card-header">
+            <span class="tactics-badge" id="tacticsCategory">Tactical Challenge</span>
+            <span class="tactics-diff" id="tacticsDifficulty">Level: Medium</span>
+          </div>
+          <h2 class="tactics-objective" id="tacticsObjective">White to move and find the winning sequence</h2>
+          <p class="tactics-instruction" id="tacticsInstruction">Find the best tactical blow to gain a decisive advantage.</p>
+          <div class="alert-box" id="gameAlertBox">
+            <span id="alertIcon">🎯</span>
+            <span id="alertMessage">Your turn! Drag or click to move.</span>
+          </div>
+        </div>
+
+        <!-- Evaluation & Move History Section -->
+        <div class="history-panel">
+          <div class="history-panel-header">
+            <span class="panel-title">📜 Move Notation</span>
+            <span class="move-count-badge" id="moveCountBadge">0 moves</span>
+          </div>
+          <div class="move-history-scroll" id="moveHistoryList">
+            <div class="empty-history-note">No moves played yet. Start by moving your piece!</div>
+          </div>
+        </div>
+
+        <!-- Quick Tactics Navigation (Puzzles Mode) -->
+        <div class="puzzle-nav-box" id="puzzleNavBox">
+          <button id="prevPuzzleBtn" class="tool-icon-btn btn-sm" type="button" title="Previous Puzzle">
+            <span>⏮️</span> Prev
+          </button>
+          <span class="puzzle-indexer" id="puzzleIndexIndicator">Puzzle 1 / 15</span>
+          <button id="nextPuzzleBtn" class="tool-icon-btn btn-sm highlight-btn" type="button" title="Next Puzzle">
+            Next <span>⏭️</span>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       MODALS: Promotion, Victory, Rules
+       ========================================================================= -->
+  <!-- Pawn Promotion Modal -->
+  <div class="modal-backdrop" id="promotionModal" role="dialog" aria-modal="true" aria-labelledby="promotionTitle">
+    <div class="modal-card">
+      <h3 class="modal-title" id="promotionTitle">Pawn Promotion</h3>
+      <p class="modal-desc">Select which piece to promote your pawn into:</p>
+      <div class="promotion-choices" id="promotionChoices">
+        <!-- Filled dynamically with SVG pieces -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over / Puzzle Solved Modal -->
+  <div class="modal-backdrop" id="gameOverModal" role="dialog" aria-modal="true" aria-labelledby="modalResultTitle">
+    <div class="modal-card modal-game-over">
+      <div class="modal-icon-badge" id="modalResultIcon">🏆</div>
+      <h3 class="modal-title" id="modalResultTitle">Puzzle Solved!</h3>
+      <p class="modal-desc" id="modalResultDesc">Brilliant move! You found the optimal tactical combination.</p>
+      
+      <div class="modal-stats-grid">
+        <div class="modal-stat-box">
+          <span class="stat-box-label">Rating Change</span>
+          <span class="stat-box-val stat-purple" id="modalRatingDelta">+15</span>
+        </div>
+        <div class="modal-stat-box">
+          <span class="stat-box-label">Current Streak</span>
+          <span class="stat-box-val stat-gold" id="modalStreakCount">1 🔥</span>
+        </div>
+        <div class="modal-stat-box">
+          <span class="stat-box-label">Accuracy</span>
+          <span class="stat-box-val stat-cyan" id="modalAccuracy">100%</span>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button id="modalActionBtn" class="btn btn-primary" type="button">Next Puzzle →</button>
+        <button id="modalReviewBtn" class="btn btn-secondary" type="button">Analyze Board</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rules & Guide Modal -->
+  <div class="modal-backdrop" id="rulesModal" role="dialog" aria-modal="true" aria-labelledby="rulesModalTitle">
+    <div class="modal-card modal-rules">
+      <h3 class="modal-title" id="rulesModalTitle">♟️ How to Play & Master Tactics</h3>
+      <div class="rules-scroll-content">
+        <h4>1. Game Modes</h4>
+        <ul>
+          <li><strong>Tactics Puzzles:</strong> Solve tactical scenarios curated from real master games (Mate-in-1, Mate-in-2, Forks, Pins, Skewers, Discovered Attacks). Gain rating points for every solved puzzle!</li>
+          <li><strong>Play vs AI:</strong> Challenge the built-in chess engine with customizable difficulty levels (Novice, Club, Master).</li>
+          <li><strong>2-Player Pass & Play:</strong> Play face-to-face with a friend on the same screen.</li>
+        </ul>
+
+        <h4>2. Controls & Interaction</h4>
+        <ul>
+          <li><strong>Drag & Drop:</strong> Drag any of your pieces and drop it onto a highlighted destination square.</li>
+          <li><strong>Click-to-Move:</strong> Click a piece to view valid legal moves, then click the target square to execute the move.</li>
+          <li><strong>Special Rules:</strong> Castling, En Passant, and Pawn Promotion are fully automated and validated.</li>
+        </ul>
+
+        <h4>3. Shortcuts</h4>
+        <ul>
+          <li><kbd>H</kbd>: Show Tactical Hint</li>
+          <li><kbd>F</kbd>: Flip Board perspective</li>
+          <li><kbd>Ctrl+Z</kbd>: Take back last move</li>
+          <li><kbd>N</kbd>: Next Puzzle / New Match</li>
+        </ul>
+      </div>
+      <div class="modal-actions">
+        <button id="rulesCloseBtn" class="btn btn-primary" type="button">Got It, Let's Play!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Scripts -->
+  <script src="./game.js"></script>
+</body>
+</html>
